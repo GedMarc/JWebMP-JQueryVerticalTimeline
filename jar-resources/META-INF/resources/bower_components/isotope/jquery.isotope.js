@@ -862,7 +862,7 @@
                     }
                 });
 
-            // re-apply saved container styles
+            // re-apply 
             var elemStyle = this.element[0].style;
             for (var prop in this.originalStyle) {
                 elemStyle[prop] = this.originalStyle[prop];

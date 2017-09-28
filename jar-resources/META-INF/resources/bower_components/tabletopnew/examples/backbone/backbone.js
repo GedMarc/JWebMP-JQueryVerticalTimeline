@@ -139,7 +139,7 @@
                 if (!(node = calls[event])) continue;
                 events.push({next: node.next, tail: node.tail});
             }
-            // Traverse each list, stopping when the saved tail is reached.
+            // Traverse each list, stopping when the 
             rest = slice.call(arguments, 1);
             while (node = events.pop()) {
                 tail = node.tail;
@@ -385,7 +385,7 @@
             return new this.constructor(this.attributes);
         },
 
-        // A model is new if it has never been saved to the server, and lacks an id.
+        // A model is new if it has never been 
         isNew: function () {
             return this.id == null;
         },

@@ -1,6 +1,6 @@
 package za.co.mmagon.jwebswing.plugins.jqueryverticaltimeline;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import za.co.mmagon.BaseTestClass;
 import za.co.mmagon.logger.LogFactory;
 
