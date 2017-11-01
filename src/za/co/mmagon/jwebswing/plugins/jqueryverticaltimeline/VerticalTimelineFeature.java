@@ -29,11 +29,11 @@ import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
  */
 public class VerticalTimelineFeature extends Feature<VerticalTimelineParentOptions, VerticalTimelineFeature> implements VerticalTimelineFeatures, GlobalFeatures
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private VerticalTimelineParentOptions options;
-	
+
 	/**
 	 * Constructs a new Tooltip ComponentFeatureBase for a component. Adds the tooltip text as the Title attribute to the component
 	 * <p>
@@ -44,10 +44,8 @@ public class VerticalTimelineFeature extends Feature<VerticalTimelineParentOptio
 	{
 		super("VerticalTimelineFeature");
 		setComponent(forComponent);
-		//	getJavascriptReferences().add(VerticalTimelineReferencePool.VerticalTimelineReference.getJavaScriptReference());
-		//	getCssReferences().add(VerticalTimelineReferencePool.VerticalTimelineReference.getCssReference());
 	}
-	
+
 	/**
 	 * Returns all the tooltip options
 	 * <p>
@@ -63,10 +61,39 @@ public class VerticalTimelineFeature extends Feature<VerticalTimelineParentOptio
 		}
 		return options;
 	}
-	
+
 	@Override
 	public void assignFunctionsToComponent()
 	{
 		addQuery(getComponent().getJQueryID() + "verticalTimeline(" + getOptions() + ");" + getNewLine());
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (o == null || getClass() != o.getClass())
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		VerticalTimelineFeature that = (VerticalTimelineFeature) o;
+
+		return getOptions().equals(that.getOptions());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getOptions().hashCode();
+		return result;
 	}
 }

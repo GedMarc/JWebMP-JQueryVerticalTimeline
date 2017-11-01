@@ -35,10 +35,10 @@ import java.util.Date;
  */
 public class VerticalTimelineOptions extends JavaScriptPart
 {
-	
-	public static final SimpleDateFormat sdfDateFormat = new SimpleDateFormat("dd MMM YYYY");
 	private static final long serialVersionUID = 1L;
-	private static final SimpleDateFormat customDateFormat = new SimpleDateFormat("MMM dd");
+	private final SimpleDateFormat sdfDateFormat = new SimpleDateFormat("dd MMM YYYY");
+
+	private final SimpleDateFormat customDateFormat = new SimpleDateFormat("MMM dd");
 	private String title;
 	/**
 	 * OURL to use as an icon
@@ -58,7 +58,7 @@ public class VerticalTimelineOptions extends JavaScriptPart
 	
 	public VerticalTimelineOptions()
 	{
-	
+		//Nothing needed
 	}
 	
 	public VerticalTimelineOptions(String title, Date date, String caption, String body)
@@ -86,12 +86,7 @@ public class VerticalTimelineOptions extends JavaScriptPart
 		this.body = body;
 		this.readMoreUrl = readMoreUrl;
 	}
-	
-	public static SimpleDateFormat getSdfDateFormat()
-	{
-		return sdfDateFormat;
-	}
-	
+
 	@JsonProperty("display date")
 	public String renderDisplayDate()
 	{
@@ -127,7 +122,6 @@ public class VerticalTimelineOptions extends JavaScriptPart
 	public VerticalTimelineOptions setCaption(String caption)
 	{
 		this.caption = caption;
-		;
 		return this;
 	}
 	

@@ -28,14 +28,14 @@ import java.util.List;
  */
 public class VerticalTimelineParentOptions extends JavaScriptPart
 {
-	
+
 	private static final long serialVersionUID = 1L;
 	private final List<VerticalTimelineOptions> data;
-	
-	
+
+
 	private MeasurementCSSImpl percentage;
-	
-	
+
+
 	/*
 	* Constructs a new VerticalTimelineParentOptions
 	 */
@@ -45,12 +45,32 @@ public class VerticalTimelineParentOptions extends JavaScriptPart
 		this.data.add(data);
 		//Nothing needed
 	}
-	
+
 	public List<VerticalTimelineOptions> getData()
 	{
 		return data;
 	}
-	
+
+	/**
+	 * Gets the parent percentage
+	 * @return
+	 */
+	public MeasurementCSSImpl getPercentage()
+	{
+		return percentage;
+	}
+
+	/**
+	 * Sets the parent percentage
+	 * @param percentage
+	 * @return
+	 */
+	public VerticalTimelineParentOptions setPercentage(MeasurementCSSImpl percentage)
+	{
+		this.percentage = percentage;
+		return this;
+	}
+
 	@Override
 	public String toString()
 	{

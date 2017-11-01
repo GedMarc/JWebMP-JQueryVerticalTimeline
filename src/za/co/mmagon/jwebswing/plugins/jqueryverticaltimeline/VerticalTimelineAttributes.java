@@ -30,12 +30,7 @@ public enum VerticalTimelineAttributes implements AttributeDefinitions
 	private VerticalTimelineAttributes()
 	{
 	}
-	
-	private VerticalTimelineAttributes(boolean isKeyword)
-	{
-		this.isKeyword = isKeyword;
-	}
-	
+
 	@Override
 	public boolean isKeyword()
 	{

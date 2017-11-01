@@ -33,11 +33,11 @@ import java.util.List;
 public class VerticalTimeline extends Div<VerticalTimelineChildren, VerticalTimelineAttributes, VerticalTimelineFeatures, VerticalTimelineEvents, VerticalTimeline>
 
 {
-	
+
 	private static final long serialVersionUID = 1L;
 	private VerticalTimelineFeature feature;
-	
-	
+
+
 	/**
 	 * Constructs a new instance of the vertical timeline
 	 */
@@ -46,7 +46,7 @@ public class VerticalTimeline extends Div<VerticalTimelineChildren, VerticalTime
 		addFeature(getFeature());
 		JQueryPageConfigurator.setRequired(this, true);
 	}
-	
+
 	public final VerticalTimelineFeature getFeature()
 	{
 		if (feature == null)
@@ -55,15 +55,44 @@ public class VerticalTimeline extends Div<VerticalTimelineChildren, VerticalTime
 		}
 		return feature;
 	}
-	
+
 	@Override
 	public VerticalTimelineOptions getOptions()
 	{
 		return getFeature().getOptions().getData().get(0);
 	}
-	
+
 	public List<VerticalTimelineOptions> getOptionsAll()
 	{
 		return getFeature().getOptions().getData();
+	}
+
+	@Override
+	public boolean equals(Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (o == null || getClass() != o.getClass())
+		{
+			return false;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+
+		VerticalTimeline that = (VerticalTimeline) o;
+
+		return getFeature().equals(that.getFeature());
+	}
+
+	@Override
+	public int hashCode()
+	{
+		int result = super.hashCode();
+		result = 31 * result + getFeature().hashCode();
+		return result;
 	}
 }
