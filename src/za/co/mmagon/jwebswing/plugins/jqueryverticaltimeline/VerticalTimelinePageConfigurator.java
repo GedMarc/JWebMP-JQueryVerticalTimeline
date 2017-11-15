@@ -45,6 +45,7 @@ public class VerticalTimelinePageConfigurator extends PageConfigurator
 	private static final long serialVersionUID = 1L;
 	
 	@Override
+	@SuppressWarnings("unchecked")
 	public Page configure(Page page)
 	{
 		if (!page.isConfigured())
