@@ -44,7 +44,7 @@ public class VerticalTimeline extends Div<VerticalTimelineChildren, VerticalTime
 	public VerticalTimeline()
 	{
 		addFeature(getFeature());
-		JQueryPageConfigurator.setRequired(this, true);
+		JQueryPageConfigurator.setRequired(true);
 	}
 
 	public final VerticalTimelineFeature getFeature()

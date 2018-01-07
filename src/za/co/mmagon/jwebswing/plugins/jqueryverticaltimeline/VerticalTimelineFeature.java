@@ -20,6 +20,8 @@ import za.co.mmagon.jwebswing.Component;
 import za.co.mmagon.jwebswing.Feature;
 import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
 
+import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
+
 /**
  * Adds on a ToolTip, String for custom text using header theme, Div for custom contents
  *
@@ -65,7 +67,7 @@ public class VerticalTimelineFeature extends Feature<VerticalTimelineParentOptio
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		addQuery(getComponent().getJQueryID() + "verticalTimeline(" + getOptions() + ");" + getNewLine());
+		addQuery(getComponent().getJQueryID() + "verticalTimeline(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
 	}
 
 	@Override
