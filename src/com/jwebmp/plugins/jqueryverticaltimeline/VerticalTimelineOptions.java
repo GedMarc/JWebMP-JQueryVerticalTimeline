@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.jqueryverticaltimeline;
+package com.jwebmp.plugins.jqueryverticaltimeline;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import za.co.mmagon.jwebswing.htmlbuilder.javascript.JavaScriptPart;
+import com.jwebmp.htmlbuilder.javascript.JavaScriptPart;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -55,12 +55,12 @@ public class VerticalTimelineOptions extends JavaScriptPart
 	private String body;
 	@JsonProperty(value = "read more url")
 	private String readMoreUrl;
-	
+
 	public VerticalTimelineOptions()
 	{
 		//Nothing needed
 	}
-	
+
 	public VerticalTimelineOptions(String title, Date date, String caption, String body)
 	{
 		this.title = title;
@@ -68,7 +68,7 @@ public class VerticalTimelineOptions extends JavaScriptPart
 		this.caption = caption;
 		this.body = body;
 	}
-	
+
 	public VerticalTimelineOptions(String title, String icon, String caption, String body)
 	{
 		this.title = title;
@@ -76,7 +76,7 @@ public class VerticalTimelineOptions extends JavaScriptPart
 		this.caption = caption;
 		this.body = body;
 	}
-	
+
 	public VerticalTimelineOptions(String title, String icon, Date date, String caption, String body)
 	{
 		this.title = title;
@@ -94,37 +94,10 @@ public class VerticalTimelineOptions extends JavaScriptPart
 		{
 			customDateFormat.applyPattern(displayFormat);
 		}
-		
+
 		return customDateFormat.format(getDate());
 	}
-	
-	public String renderDate()
-	{
-		return sdfDateFormat.format(getDate());
-	}
-	
-	public String getBody()
-	{
-		return body;
-	}
-	
-	public VerticalTimelineOptions setBody(String body)
-	{
-		this.body = body;
-		return this;
-	}
-	
-	public String getCaption()
-	{
-		return caption;
-	}
-	
-	public VerticalTimelineOptions setCaption(String caption)
-	{
-		this.caption = caption;
-		return this;
-	}
-	
+
 	public Date getDate()
 	{
 		if (date == null)
@@ -133,72 +106,99 @@ public class VerticalTimelineOptions extends JavaScriptPart
 		}
 		return date;
 	}
-	
+
 	public VerticalTimelineOptions setDate(Date date)
 	{
 		this.date = date;
 		return this;
 	}
-	
+
+	public String renderDate()
+	{
+		return sdfDateFormat.format(getDate());
+	}
+
+	public String getBody()
+	{
+		return body;
+	}
+
+	public VerticalTimelineOptions setBody(String body)
+	{
+		this.body = body;
+		return this;
+	}
+
+	public String getCaption()
+	{
+		return caption;
+	}
+
+	public VerticalTimelineOptions setCaption(String caption)
+	{
+		this.caption = caption;
+		return this;
+	}
+
 	public String getDisplayFormat()
 	{
 		return displayFormat;
 	}
-	
+
 	public VerticalTimelineOptions setDisplayFormat(String displayFormat)
 	{
 		this.displayFormat = displayFormat;
 		return this;
 	}
-	
+
 	public String getIcon()
 	{
 		return icon;
 	}
-	
+
 	public VerticalTimelineOptions setIcon(String icon)
 	{
 		this.icon = icon;
 		return this;
 	}
-	
+
 	public String getPhotoUrl()
 	{
 		return photoUrl;
 	}
-	
+
 	public VerticalTimelineOptions setPhotoUrl(String photoUrl)
 	{
 		this.photoUrl = photoUrl;
 		return this;
 	}
-	
+
 	public String getReadMoreUrl()
 	{
 		return readMoreUrl;
 	}
-	
+
 	public VerticalTimelineOptions setReadMoreUrl(String readMoreUrl)
 	{
 		this.readMoreUrl = readMoreUrl;
 		return this;
 	}
-	
+
 	public String getTitle()
 	{
 		return title;
 	}
-	
+
 	public VerticalTimelineOptions setTitle(String title)
 	{
 		this.title = title;
 		return this;
 	}
-	
+
 	@Override
 	public String toString()
 	{
 		return super.toString().replaceAll("\n", "").replace("\r", "").replace("\t", "");
 	}
-	
+
 }

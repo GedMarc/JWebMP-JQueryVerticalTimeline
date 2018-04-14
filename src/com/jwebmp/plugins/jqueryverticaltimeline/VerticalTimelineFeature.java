@@ -14,13 +14,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.jqueryverticaltimeline;
+package com.jwebmp.plugins.jqueryverticaltimeline;
 
-import za.co.mmagon.jwebswing.Component;
-import za.co.mmagon.jwebswing.Feature;
-import za.co.mmagon.jwebswing.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.Component;
+import com.jwebmp.Feature;
+import com.jwebmp.base.html.interfaces.GlobalFeatures;
 
-import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
+import static com.jwebmp.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
 
 /**
  * Adds on a ToolTip, String for custom text using header theme, Div for custom contents
@@ -29,7 +29,9 @@ import static za.co.mmagon.jwebswing.utilities.StaticStrings.STRING_CLOSING_BRAC
  * @version 1.0
  * @since 2013/01/16
  */
-public class VerticalTimelineFeature extends Feature<VerticalTimelineParentOptions, VerticalTimelineFeature> implements VerticalTimelineFeatures, GlobalFeatures
+public class VerticalTimelineFeature
+		extends Feature<VerticalTimelineParentOptions, VerticalTimelineFeature>
+		implements VerticalTimelineFeatures, GlobalFeatures
 {
 
 	private static final long serialVersionUID = 1L;
@@ -48,26 +50,12 @@ public class VerticalTimelineFeature extends Feature<VerticalTimelineParentOptio
 		setComponent(forComponent);
 	}
 
-	/**
-	 * Returns all the tooltip options
-	 * <p>
-	 *
-	 * @return
-	 */
 	@Override
-	public VerticalTimelineParentOptions getOptions()
+	public int hashCode()
 	{
-		if (options == null)
-		{
-			options = new VerticalTimelineParentOptions(new VerticalTimelineOptions());
-		}
-		return options;
-	}
-
-	@Override
-	public void assignFunctionsToComponent()
-	{
-		addQuery(getComponent().getJQueryID() + "verticalTimeline(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
+		int result = super.hashCode();
+		result = 31 * result + getOptions().hashCode();
+		return result;
 	}
 
 	@Override
@@ -91,11 +79,25 @@ public class VerticalTimelineFeature extends Feature<VerticalTimelineParentOptio
 		return getOptions().equals(that.getOptions());
 	}
 
+	/**
+	 * Returns all the tooltip options
+	 * <p>
+	 *
+	 * @return
+	 */
 	@Override
-	public int hashCode()
+	public VerticalTimelineParentOptions getOptions()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getOptions().hashCode();
-		return result;
+		if (options == null)
+		{
+			options = new VerticalTimelineParentOptions(new VerticalTimelineOptions());
+		}
+		return options;
+	}
+
+	@Override
+	public void assignFunctionsToComponent()
+	{
+		addQuery(getComponent().getJQueryID() + "verticalTimeline(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
 	}
 }

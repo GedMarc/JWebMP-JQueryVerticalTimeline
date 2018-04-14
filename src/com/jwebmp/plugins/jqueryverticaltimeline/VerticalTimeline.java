@@ -14,10 +14,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.jqueryverticaltimeline;
+package com.jwebmp.plugins.jqueryverticaltimeline;
 
-import za.co.mmagon.jwebswing.base.html.Div;
-import za.co.mmagon.jwebswing.plugins.jquery.JQueryPageConfigurator;
+import com.jwebmp.base.html.Div;
+import com.jwebmp.plugins.jquery.JQueryPageConfigurator;
 
 import java.util.List;
 
@@ -30,7 +30,8 @@ import java.util.List;
  * @version 1.0
  * @since 24 October 2016
  */
-public class VerticalTimeline extends Div<VerticalTimelineChildren, VerticalTimelineAttributes, VerticalTimelineFeatures, VerticalTimelineEvents, VerticalTimeline>
+public class VerticalTimeline
+		extends Div<VerticalTimelineChildren, VerticalTimelineAttributes, VerticalTimelineFeatures, VerticalTimelineEvents, VerticalTimeline>
 
 {
 
@@ -59,12 +60,15 @@ public class VerticalTimeline extends Div<VerticalTimelineChildren, VerticalTime
 	@Override
 	public VerticalTimelineOptions getOptions()
 	{
-		return getFeature().getOptions().getData().get(0);
+		return getFeature().getOptions()
+		                   .getData()
+		                   .get(0);
 	}
 
 	public List<VerticalTimelineOptions> getOptionsAll()
 	{
-		return getFeature().getOptions().getData();
+		return getFeature().getOptions()
+		                   .getData();
 	}
 
 	@Override

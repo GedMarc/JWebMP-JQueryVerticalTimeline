@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.jqueryverticaltimeline;
+package com.jwebmp.plugins.jqueryverticaltimeline;
 
-import za.co.mmagon.jwebswing.Page;
-import za.co.mmagon.jwebswing.PageConfigurator;
-import za.co.mmagon.jwebswing.plugins.PluginInformation;
+import com.jwebmp.Page;
+import com.jwebmp.PageConfigurator;
+import com.jwebmp.plugins.PluginInformation;
 
 /**
  * @author GedMarc
@@ -37,27 +37,39 @@ import za.co.mmagon.jwebswing.plugins.PluginInformation;
 		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/VerticalTimelineGemPlugin.jar/download",
 		pluginIconUrl = "bower_components/vertical-timeline-jwebswing/example.png",
 		pluginIconImageUrl = "bower_components/vertical-timeline-jwebswing/example.png",
-		pluginLastUpdatedDate = "2017/03/04"
-)
-public class VerticalTimelinePageConfigurator extends PageConfigurator
+		pluginLastUpdatedDate = "2017/03/04")
+public class VerticalTimelinePageConfigurator
+		extends PageConfigurator
 {
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@Override
 	@SuppressWarnings("unchecked")
 	public Page configure(Page page)
 	{
 		if (!page.isConfigured())
 		{
-			page.getBody().getJavascriptReferences().add(VerticalTimelineReferencePool.VerticalTimelineReferenceUnderscore.getJavaScriptReference());
-			page.getBody().getJavascriptReferences().add(VerticalTimelineReferencePool.VerticalTimelineReferenceTableTop.getJavaScriptReference());
-			page.getBody().getJavascriptReferences().add(VerticalTimelineReferencePool.VerticalTimelineReferenceIsotope.getJavaScriptReference());
-			page.getBody().getJavascriptReferences().add(VerticalTimelineReferencePool.VerticalTimelineReferenceImagesLoaded.getJavaScriptReference());
-			page.getBody().getJavascriptReferences().add(VerticalTimelineReferencePool.VerticalTimelineReference.getJavaScriptReference());
-			page.getBody().getCssReferences().add(VerticalTimelineReferencePool.VerticalTimelineReference.getCssReference());
+			page.getBody()
+			    .getJavascriptReferences()
+			    .add(VerticalTimelineReferencePool.VerticalTimelineReferenceUnderscore.getJavaScriptReference());
+			page.getBody()
+			    .getJavascriptReferences()
+			    .add(VerticalTimelineReferencePool.VerticalTimelineReferenceTableTop.getJavaScriptReference());
+			page.getBody()
+			    .getJavascriptReferences()
+			    .add(VerticalTimelineReferencePool.VerticalTimelineReferenceIsotope.getJavaScriptReference());
+			page.getBody()
+			    .getJavascriptReferences()
+			    .add(VerticalTimelineReferencePool.VerticalTimelineReferenceImagesLoaded.getJavaScriptReference());
+			page.getBody()
+			    .getJavascriptReferences()
+			    .add(VerticalTimelineReferencePool.VerticalTimelineReference.getJavaScriptReference());
+			page.getBody()
+			    .getCssReferences()
+			    .add(VerticalTimelineReferencePool.VerticalTimelineReference.getCssReference());
 		}
 		return page;
 	}
-	
+
 }

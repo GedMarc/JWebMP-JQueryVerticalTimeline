@@ -14,24 +14,4 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.jqueryverticaltimeline;
-
-import org.junit.jupiter.api.Test;
-
-/**
- * @author Marc Magon
- */
-public class VerticalTimelineOptionsTest
-{
-
-	public VerticalTimelineOptionsTest()
-	{
-	}
-
-	@Test
-	public void testSomeMethod()
-	{
-		System.out.println(new VerticalTimelineOptions());
-	}
-
-}
+package com.jwebmp.plugins.jqueryverticaltimeline;

@@ -14,11 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package za.co.mmagon.jwebswing.plugins.jqueryverticaltimeline;
+package com.jwebmp.plugins.jqueryverticaltimeline;
 
-import za.co.mmagon.jwebswing.base.references.CSSReference;
-import za.co.mmagon.jwebswing.base.references.JavascriptReference;
-import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
+import com.jwebmp.base.references.CSSReference;
+import com.jwebmp.base.references.JavascriptReference;
+import com.jwebmp.base.servlets.interfaces.ReferencePool;
 
 /**
  * Default reference pool structure
@@ -26,50 +26,51 @@ import za.co.mmagon.jwebswing.base.servlets.interfaces.ReferencePool;
  * @author GedMarc
  * @since 24 Oct 2016
  */
-public enum VerticalTimelineReferencePool implements ReferencePool
+public enum VerticalTimelineReferencePool
+		implements ReferencePool
 {
 	VerticalTimelineReference(new JavascriptReference("JQueryVerticalTimeline", 1.0, "bower_components/jquery-vertical-timeline/dist/jquery-vertical-timeline.js"),
 	                          new CSSReference("JQueryVerticalTimeline", 1.0, "bower_components/jquery-vertical-timeline/dist/jquery-vertical-timeline.css")),
-	
+
 	VerticalTimelineReferenceUnderscore(new JavascriptReference("JQueryVerticalTimelineUnderscore", 1.0, "bower_components/underscore/underscore.js"), null),
 	VerticalTimelineReferenceTableTop(new JavascriptReference("JQueryVerticalTimelineTableTop", 1.0, "bower_components/tabletopnew/src/tabletop.js"), null),
 	VerticalTimelineReferenceIsotope(new JavascriptReference("JQueryVerticalTimelineIsotope", 1.0, "bower_components/isotope/jquery.isotope.js"), null),
 	VerticalTimelineReferenceImagesLoaded(new JavascriptReference("JQueryVerticalTimelineImagesLoaded", 1.0, "bower_components/imagesloaded/imagesloaded.pkgd.js"), null),;
-	
+
 	private JavascriptReference javaScriptReference;
 	private CSSReference cssReference;
 
-	private VerticalTimelineReferencePool()
+	VerticalTimelineReferencePool()
 	{
 	}
-	
-	private VerticalTimelineReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
+
+	VerticalTimelineReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
 	{
 		this.javaScriptReference = javaScriptReference;
 		this.cssReference = cssReference;
 	}
-	
-	@Override
-	public JavascriptReference getJavaScriptReference()
-	{
-		return javaScriptReference;
-	}
-	
-	@Override
-	public void setJavaScriptReference(JavascriptReference javaScriptReference)
-	{
-		this.javaScriptReference = javaScriptReference;
-	}
-	
+
 	@Override
 	public CSSReference getCssReference()
 	{
 		return cssReference;
 	}
-	
+
 	@Override
 	public void setCssReference(CSSReference cssReference)
 	{
 		this.cssReference = cssReference;
+	}
+
+	@Override
+	public JavascriptReference getJavaScriptReference()
+	{
+		return javaScriptReference;
+	}
+
+	@Override
+	public void setJavaScriptReference(JavascriptReference javaScriptReference)
+	{
+		this.javaScriptReference = javaScriptReference;
 	}
 }
