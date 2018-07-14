@@ -20,7 +20,7 @@ import com.jwebmp.Component;
 import com.jwebmp.Feature;
 import com.jwebmp.base.html.interfaces.GlobalFeatures;
 
-import static com.jwebmp.utilities.StaticStrings.STRING_CLOSING_BRACKET_SEMICOLON;
+import static com.jwebmp.utilities.StaticStrings.*;
 
 /**
  * Adds on a ToolTip, String for custom text using header theme, Div for custom contents

@@ -26,18 +26,17 @@ import java.util.List;
  * @author Marc Magon
  * @since 07 Aug 2017
  */
-public class VerticalTimelineParentOptions extends JavaScriptPart
+public class VerticalTimelineParentOptions
+		extends JavaScriptPart
 {
 
 	private static final long serialVersionUID = 1L;
 	private final List<VerticalTimelineOptions> data;
 
-
 	private MeasurementCSSImpl percentage;
 
-
 	/*
-	* Constructs a new VerticalTimelineParentOptions
+	 * Constructs a new VerticalTimelineParentOptions
 	 */
 	public VerticalTimelineParentOptions(VerticalTimelineOptions data)
 	{
@@ -53,6 +52,7 @@ public class VerticalTimelineParentOptions extends JavaScriptPart
 
 	/**
 	 * Gets the parent percentage
+	 *
 	 * @return
 	 */
 	public MeasurementCSSImpl getPercentage()
@@ -62,7 +62,9 @@ public class VerticalTimelineParentOptions extends JavaScriptPart
 
 	/**
 	 * Sets the parent percentage
+	 *
 	 * @param percentage
+	 *
 	 * @return
 	 */
 	public VerticalTimelineParentOptions setPercentage(MeasurementCSSImpl percentage)
@@ -74,6 +76,10 @@ public class VerticalTimelineParentOptions extends JavaScriptPart
 	@Override
 	public String toString()
 	{
-		return super.toString().replaceAll("\"data\"", "data").replaceAll("\n", "").replace("\r", "").replace("\t", "");
+		return super.toString()
+		            .replaceAll("\"data\"", "data")
+		            .replaceAll("\n", "")
+		            .replace("\r", "")
+		            .replace("\t", "");
 	}
 }

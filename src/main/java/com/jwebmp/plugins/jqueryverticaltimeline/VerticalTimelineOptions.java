@@ -29,11 +29,12 @@ import java.util.Date;
  *
  * @author GedMarc
  * @version 1.0
- * <p>
- * <p>
+ * 		<p>
+ * 		<p>
  * @since Mar 4, 2015
  */
-public class VerticalTimelineOptions extends JavaScriptPart
+public class VerticalTimelineOptions
+		extends JavaScriptPart
 {
 	private static final long serialVersionUID = 1L;
 	private final SimpleDateFormat sdfDateFormat = new SimpleDateFormat("dd MMM YYYY");
@@ -198,7 +199,10 @@ public class VerticalTimelineOptions extends JavaScriptPart
 	@Override
 	public String toString()
 	{
-		return super.toString().replaceAll("\n", "").replace("\r", "").replace("\t", "");
+		return super.toString()
+		            .replaceAll("\n", "")
+		            .replace("\r", "")
+		            .replace("\t", "");
 	}
 
 }

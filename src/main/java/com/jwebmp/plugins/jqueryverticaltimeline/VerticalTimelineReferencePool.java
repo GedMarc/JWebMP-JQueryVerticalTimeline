@@ -35,7 +35,8 @@ public enum VerticalTimelineReferencePool
 	VerticalTimelineReferenceUnderscore(new JavascriptReference("JQueryVerticalTimelineUnderscore", 1.0, "bower_components/underscore/underscore.js"), null),
 	VerticalTimelineReferenceTableTop(new JavascriptReference("JQueryVerticalTimelineTableTop", 1.0, "bower_components/tabletopnew/src/tabletop.js"), null),
 	VerticalTimelineReferenceIsotope(new JavascriptReference("JQueryVerticalTimelineIsotope", 1.0, "bower_components/isotope/jquery.isotope.js"), null),
-	VerticalTimelineReferenceImagesLoaded(new JavascriptReference("JQueryVerticalTimelineImagesLoaded", 1.0, "bower_components/imagesloaded/imagesloaded.pkgd.js"), null),;
+	VerticalTimelineReferenceImagesLoaded(new JavascriptReference("JQueryVerticalTimelineImagesLoaded", 1.0, "bower_components/imagesloaded/imagesloaded.pkgd.js"), null),
+	;
 
 	private JavascriptReference javaScriptReference;
 	private CSSReference cssReference;
