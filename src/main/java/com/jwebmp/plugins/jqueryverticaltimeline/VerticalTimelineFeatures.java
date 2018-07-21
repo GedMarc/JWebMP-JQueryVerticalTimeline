@@ -14,9 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.plugins.jqueryverticaltimeline;
+package com.jwebmp.core.plugins.jqueryverticaltimeline;
 
-import com.jwebmp.base.html.interfaces.GlobalFeatures;
+import com.jwebmp.core.base.html.interfaces.GlobalFeatures;
 
 /**
  * @author Marc Magon

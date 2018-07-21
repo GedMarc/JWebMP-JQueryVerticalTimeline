@@ -1,6 +1,6 @@
-module com.jwebmp.plugins.jqueryverticaltimeline {
+module com.jwebmp.core.plugins.jqueryverticaltimeline {
 
-	exports com.jwebmp.plugins.jqueryverticaltimeline;
+	exports com.jwebmp.core.plugins.jqueryverticaltimeline;
 
 	requires com.jwebmp.core;
 	requires com.jwebmp.logmaster;
