@@ -1,6 +1,8 @@
-module com.jwebmp.core.plugins.jqueryverticaltimeline {
+import com.jwebmp.core.services.IPageConfigurator;
 
-	exports com.jwebmp.core.plugins.jqueryverticaltimeline;
+module com.jwebmp.plugins.jqueryverticaltimeline{
+
+	exports com.jwebmp.plugins.jqueryverticaltimeline;
 
 	requires com.jwebmp.core;
 	requires com.jwebmp.logmaster;
@@ -8,4 +10,7 @@ module com.jwebmp.core.plugins.jqueryverticaltimeline {
 
 	requires java.validation;
 	requires java.logging;
+
+	provides IPageConfigurator with com.jwebmp.plugins.jqueryverticaltimeline.VerticalTimelinePageConfigurator;
+
 }

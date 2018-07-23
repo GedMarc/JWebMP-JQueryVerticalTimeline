@@ -1,4 +1,4 @@
-package com.jwebmp.core.plugins.jqueryverticaltimeline;
+package com.jwebmp.plugins.jqueryverticaltimeline;
 
 import com.jwebmp.logger.LogFactory;
 import org.junit.jupiter.api.Test;
