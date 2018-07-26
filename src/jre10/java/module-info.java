@@ -12,5 +12,5 @@ module com.jwebmp.plugins.jqueryverticaltimeline{
 	requires java.logging;
 
 	provides IPageConfigurator with com.jwebmp.plugins.jqueryverticaltimeline.VerticalTimelinePageConfigurator;
-
+	opens com.jwebmp.plugins.jqueryverticaltimeline to com.fasterxml.jackson.databind,com.jwebmp.core;
 }
