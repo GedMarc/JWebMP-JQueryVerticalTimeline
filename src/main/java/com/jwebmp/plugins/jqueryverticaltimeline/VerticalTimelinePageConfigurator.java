@@ -20,6 +20,8 @@ import com.jwebmp.core.Page;
 import com.jwebmp.core.plugins.PluginInformation;
 import com.jwebmp.core.services.IPageConfigurator;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * @author GedMarc
  */
@@ -41,6 +43,7 @@ import com.jwebmp.core.services.IPageConfigurator;
 public class VerticalTimelinePageConfigurator
 		implements IPageConfigurator
 {
+	@NotNull
 	@Override
 	@SuppressWarnings("unchecked")
 	public Page configure(Page page)
