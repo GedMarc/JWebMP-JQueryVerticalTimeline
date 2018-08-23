@@ -30,8 +30,7 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @since 2013/01/16
  */
 public class VerticalTimelineFeature
-		extends Feature<VerticalTimelineParentOptions, VerticalTimelineFeature>
-		implements VerticalTimelineFeatures, GlobalFeatures
+		extends Feature<GlobalFeatures, VerticalTimelineParentOptions, VerticalTimelineFeature>
 {
 
 	private static final long serialVersionUID = 1L;
@@ -53,30 +52,13 @@ public class VerticalTimelineFeature
 	@Override
 	public int hashCode()
 	{
-		int result = super.hashCode();
-		result = 31 * result + getOptions().hashCode();
-		return result;
+		return super.hashCode();
 	}
 
 	@Override
-	public boolean equals(Object o)
+	public boolean equals(Object obj)
 	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (o == null || getClass() != o.getClass())
-		{
-			return false;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-
-		VerticalTimelineFeature that = (VerticalTimelineFeature) o;
-
-		return getOptions().equals(that.getOptions());
+		return super.equals(obj);
 	}
 
 	/**
