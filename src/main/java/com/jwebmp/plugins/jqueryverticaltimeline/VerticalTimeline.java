@@ -35,7 +35,7 @@ public class VerticalTimeline
 
 {
 
-	private static final long serialVersionUID = 1L;
+
 	private VerticalTimelineFeature feature;
 
 	/**

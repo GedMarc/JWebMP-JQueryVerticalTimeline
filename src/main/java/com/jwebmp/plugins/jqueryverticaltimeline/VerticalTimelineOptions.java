@@ -36,7 +36,7 @@ import java.util.Date;
 public class VerticalTimelineOptions
 		extends JavaScriptPart
 {
-	private static final long serialVersionUID = 1L;
+
 	private final SimpleDateFormat sdfDateFormat = new SimpleDateFormat("dd MMM YYYY");
 
 	private final SimpleDateFormat customDateFormat = new SimpleDateFormat("MMM dd");
@@ -85,7 +85,7 @@ public class VerticalTimelineOptions
 		this.date = date;
 		this.caption = caption;
 		this.body = body;
-		this.readMoreUrl = readMoreUrl;
+		readMoreUrl = readMoreUrl;
 	}
 
 	@JsonProperty("display date")
