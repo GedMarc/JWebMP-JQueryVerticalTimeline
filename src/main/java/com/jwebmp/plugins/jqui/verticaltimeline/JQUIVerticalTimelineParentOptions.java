@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.plugins.jqueryverticaltimeline;
+package com.jwebmp.plugins.jqui.verticaltimeline;
 
 import com.jwebmp.core.htmlbuilder.css.measurement.MeasurementCSSImpl;
 import com.jwebmp.core.htmlbuilder.javascript.JavaScriptPart;
@@ -26,26 +26,26 @@ import java.util.List;
  * @author GedMarc
  * @since 07 Aug 2017
  */
-public class VerticalTimelineParentOptions
+public class JQUIVerticalTimelineParentOptions
 		extends JavaScriptPart
 {
 
 
-	private final List<VerticalTimelineOptions> data;
+	private final List<JQUIVerticalTimelineOptions> data;
 
 	private MeasurementCSSImpl percentage;
 
 	/*
-	 * Constructs a new VerticalTimelineParentOptions
+	 * Constructs a new JQUIVerticalTimelineParentOptions
 	 */
-	public VerticalTimelineParentOptions(VerticalTimelineOptions data)
+	public JQUIVerticalTimelineParentOptions(JQUIVerticalTimelineOptions data)
 	{
 		this.data = new ArrayList<>();
 		this.data.add(data);
 		//Nothing needed
 	}
 
-	public List<VerticalTimelineOptions> getData()
+	public List<JQUIVerticalTimelineOptions> getData()
 	{
 		return data;
 	}
@@ -67,7 +67,7 @@ public class VerticalTimelineParentOptions
 	 *
 	 * @return
 	 */
-	public VerticalTimelineParentOptions setPercentage(MeasurementCSSImpl percentage)
+	public JQUIVerticalTimelineParentOptions setPercentage(MeasurementCSSImpl percentage)
 	{
 		this.percentage = percentage;
 		return this;

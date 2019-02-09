@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.plugins.jqueryverticaltimeline;
+package com.jwebmp.plugins.jqui.verticaltimeline;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -33,12 +33,12 @@ import java.util.Date;
  * 		<p>
  * @since Mar 4, 2015
  */
-public class VerticalTimelineOptions
+public class JQUIVerticalTimelineOptions
 		extends JavaScriptPart
 {
-
+	@JsonIgnore
 	private final SimpleDateFormat sdfDateFormat = new SimpleDateFormat("dd MMM YYYY");
-
+	@JsonIgnore
 	private final SimpleDateFormat customDateFormat = new SimpleDateFormat("MMM dd");
 	private String title;
 	/**
@@ -57,12 +57,12 @@ public class VerticalTimelineOptions
 	@JsonProperty(value = "read more url")
 	private String readMoreUrl;
 
-	public VerticalTimelineOptions()
+	public JQUIVerticalTimelineOptions()
 	{
 		//Nothing needed
 	}
 
-	public VerticalTimelineOptions(String title, Date date, String caption, String body)
+	public JQUIVerticalTimelineOptions(String title, Date date, String caption, String body)
 	{
 		this.title = title;
 		this.date = date;
@@ -70,7 +70,7 @@ public class VerticalTimelineOptions
 		this.body = body;
 	}
 
-	public VerticalTimelineOptions(String title, String icon, String caption, String body)
+	public JQUIVerticalTimelineOptions(String title, String icon, String caption, String body)
 	{
 		this.title = title;
 		this.icon = icon;
@@ -78,7 +78,7 @@ public class VerticalTimelineOptions
 		this.body = body;
 	}
 
-	public VerticalTimelineOptions(String title, String icon, Date date, String caption, String body)
+	public JQUIVerticalTimelineOptions(String title, String icon, Date date, String caption, String body)
 	{
 		this.title = title;
 		this.icon = icon;
@@ -108,7 +108,7 @@ public class VerticalTimelineOptions
 		return date;
 	}
 
-	public VerticalTimelineOptions setDate(Date date)
+	public JQUIVerticalTimelineOptions setDate(Date date)
 	{
 		this.date = date;
 		return this;
@@ -124,7 +124,7 @@ public class VerticalTimelineOptions
 		return body;
 	}
 
-	public VerticalTimelineOptions setBody(String body)
+	public JQUIVerticalTimelineOptions setBody(String body)
 	{
 		this.body = body;
 		return this;
@@ -135,7 +135,7 @@ public class VerticalTimelineOptions
 		return caption;
 	}
 
-	public VerticalTimelineOptions setCaption(String caption)
+	public JQUIVerticalTimelineOptions setCaption(String caption)
 	{
 		this.caption = caption;
 		return this;
@@ -146,7 +146,7 @@ public class VerticalTimelineOptions
 		return displayFormat;
 	}
 
-	public VerticalTimelineOptions setDisplayFormat(String displayFormat)
+	public JQUIVerticalTimelineOptions setDisplayFormat(String displayFormat)
 	{
 		this.displayFormat = displayFormat;
 		return this;
@@ -157,7 +157,7 @@ public class VerticalTimelineOptions
 		return icon;
 	}
 
-	public VerticalTimelineOptions setIcon(String icon)
+	public JQUIVerticalTimelineOptions setIcon(String icon)
 	{
 		this.icon = icon;
 		return this;
@@ -168,7 +168,7 @@ public class VerticalTimelineOptions
 		return photoUrl;
 	}
 
-	public VerticalTimelineOptions setPhotoUrl(String photoUrl)
+	public JQUIVerticalTimelineOptions setPhotoUrl(String photoUrl)
 	{
 		this.photoUrl = photoUrl;
 		return this;
@@ -179,7 +179,7 @@ public class VerticalTimelineOptions
 		return readMoreUrl;
 	}
 
-	public VerticalTimelineOptions setReadMoreUrl(String readMoreUrl)
+	public JQUIVerticalTimelineOptions setReadMoreUrl(String readMoreUrl)
 	{
 		this.readMoreUrl = readMoreUrl;
 		return this;
@@ -190,7 +190,7 @@ public class VerticalTimelineOptions
 		return title;
 	}
 
-	public VerticalTimelineOptions setTitle(String title)
+	public JQUIVerticalTimelineOptions setTitle(String title)
 	{
 		this.title = title;
 		return this;

@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.plugins.jqueryverticaltimeline;
+package com.jwebmp.plugins.jqui.verticaltimeline;
 
 import com.jwebmp.core.base.ComponentBase;
 import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
@@ -24,7 +24,7 @@ import com.jwebmp.core.base.interfaces.IComponentHierarchyBase;
  * @version 1.0
  * @since 07 Aug 2015
  */
-public interface VerticalTimelineChildren<C extends IComponentHierarchyBase, J extends ComponentBase>
+public interface JQUIVerticalTimelineChildren<C extends IComponentHierarchyBase, J extends ComponentBase>
 		extends IComponentHierarchyBase<C, J>
 {
 

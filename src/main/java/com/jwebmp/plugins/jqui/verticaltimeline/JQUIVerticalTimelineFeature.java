@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.plugins.jqueryverticaltimeline;
+package com.jwebmp.plugins.jqui.verticaltimeline;
 
 import com.jwebmp.core.Component;
 import com.jwebmp.core.Feature;
@@ -29,12 +29,12 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
  * @version 1.0
  * @since 2013/01/16
  */
-public class VerticalTimelineFeature
-		extends Feature<GlobalFeatures, VerticalTimelineParentOptions, VerticalTimelineFeature>
+public class JQUIVerticalTimelineFeature
+		extends Feature<GlobalFeatures, JQUIVerticalTimelineParentOptions, JQUIVerticalTimelineFeature>
 {
 
 
-	private VerticalTimelineParentOptions options;
+	private JQUIVerticalTimelineParentOptions options;
 
 	/**
 	 * Constructs a new Tooltip ComponentFeatureBase for a component. Adds the tooltip text as the Title attribute to the component
@@ -42,9 +42,9 @@ public class VerticalTimelineFeature
 	 *
 	 * @param forComponent
 	 */
-	public VerticalTimelineFeature(Component forComponent)
+	public JQUIVerticalTimelineFeature(Component forComponent)
 	{
-		super("VerticalTimelineFeature");
+		super("JQUIVerticalTimelineFeature");
 		setComponent(forComponent);
 	}
 
@@ -67,11 +67,11 @@ public class VerticalTimelineFeature
 	 * @return
 	 */
 	@Override
-	public VerticalTimelineParentOptions getOptions()
+	public JQUIVerticalTimelineParentOptions getOptions()
 	{
 		if (options == null)
 		{
-			options = new VerticalTimelineParentOptions(new VerticalTimelineOptions());
+			options = new JQUIVerticalTimelineParentOptions(new JQUIVerticalTimelineOptions());
 		}
 		return options;
 	}

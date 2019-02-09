@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.plugins.jqueryverticaltimeline;
+package com.jwebmp.plugins.jqui.verticaltimeline;
 
 import com.jwebmp.core.base.html.Div;
 import com.jwebmp.core.plugins.jquery.JQueryPageConfigurator;
@@ -30,41 +30,41 @@ import java.util.List;
  * @version 1.0
  * @since 24 October 2016
  */
-public class VerticalTimeline
-		extends Div<VerticalTimelineChildren, VerticalTimelineAttributes, VerticalTimelineFeatures, VerticalTimelineEvents, VerticalTimeline>
+public class JQUIVerticalTimeline
+		extends Div<JQUIVerticalTimelineChildren, JQUIVerticalTimelineAttributes, JQUIVerticalTimelineFeatures, JQUIVerticalTimelineEvents, JQUIVerticalTimeline>
 
 {
 
 
-	private VerticalTimelineFeature feature;
+	private JQUIVerticalTimelineFeature feature;
 
 	/**
 	 * Constructs a new instance of the vertical timeline
 	 */
-	public VerticalTimeline()
+	public JQUIVerticalTimeline()
 	{
 		addFeature(getFeature());
 		JQueryPageConfigurator.setRequired(true);
 	}
 
-	public final VerticalTimelineFeature getFeature()
+	public final JQUIVerticalTimelineFeature getFeature()
 	{
 		if (feature == null)
 		{
-			feature = new VerticalTimelineFeature(this);
+			feature = new JQUIVerticalTimelineFeature(this);
 		}
 		return feature;
 	}
 
 	@Override
-	public VerticalTimelineOptions getOptions()
+	public JQUIVerticalTimelineOptions getOptions()
 	{
 		return getFeature().getOptions()
 		                   .getData()
 		                   .get(0);
 	}
 
-	public List<VerticalTimelineOptions> getOptionsAll()
+	public List<JQUIVerticalTimelineOptions> getOptionsAll()
 	{
 		return getFeature().getOptions()
 		                   .getData();

@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.plugins.jqueryverticaltimeline;
+package com.jwebmp.plugins.jqui.verticaltimeline;
 
 import com.jwebmp.core.base.html.interfaces.AttributeDefinitions;
 import com.jwebmp.core.utilities.StaticStrings;
@@ -24,14 +24,14 @@ import static com.jwebmp.core.utilities.StaticStrings.*;
 /**
  * @author GedMarc
  */
-public enum VerticalTimelineAttributes
+public enum JQUIVerticalTimelineAttributes
 		implements AttributeDefinitions
 {
 	Visibility;
 
 	private boolean isKeyword;
 
-	VerticalTimelineAttributes()
+	JQUIVerticalTimelineAttributes()
 	{
 	}
 

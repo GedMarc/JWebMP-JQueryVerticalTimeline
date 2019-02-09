@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.plugins.jqueryverticaltimeline;
+package com.jwebmp.plugins.jqui.verticaltimeline;
 
 import com.jwebmp.core.base.references.CSSReference;
 import com.jwebmp.core.base.references.JavascriptReference;
@@ -26,7 +26,7 @@ import com.jwebmp.core.base.servlets.interfaces.ReferencePool;
  * @author GedMarc
  * @since 24 Oct 2016
  */
-public enum VerticalTimelineReferencePool
+public enum JQUIVerticalTimelineReferencePool
 		implements ReferencePool
 {
 	VerticalTimelineReference(new JavascriptReference("JQueryVerticalTimeline", 1.0, "bower_components/jquery-vertical-timeline/dist/jquery-vertical-timeline.js"),
@@ -41,11 +41,11 @@ public enum VerticalTimelineReferencePool
 	private JavascriptReference javaScriptReference;
 	private CSSReference cssReference;
 
-	VerticalTimelineReferencePool()
+	JQUIVerticalTimelineReferencePool()
 	{
 	}
 
-	VerticalTimelineReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
+	JQUIVerticalTimelineReferencePool(JavascriptReference javaScriptReference, CSSReference cssReference)
 	{
 		this.javaScriptReference = javaScriptReference;
 		this.cssReference = cssReference;

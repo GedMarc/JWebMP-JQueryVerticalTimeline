@@ -14,24 +14,24 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.plugins.jqueryverticaltimeline;
+package com.jwebmp.plugins.jqui.verticaltimeline;
 
 import org.junit.jupiter.api.Test;
 
 /**
  * @author GedMarc
  */
-public class VerticalTimelineOptionsTest
+public class JQUIJQUIVerticalTimelineOptionsTest
 {
 
-	public VerticalTimelineOptionsTest()
+	public JQUIJQUIVerticalTimelineOptionsTest()
 	{
 	}
 
 	@Test
 	public void testSomeMethod()
 	{
-		System.out.println(new VerticalTimelineOptions());
+		System.out.println(new JQUIVerticalTimelineOptions());
 	}
 
 }

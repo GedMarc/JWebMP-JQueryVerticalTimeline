@@ -1,11 +1,11 @@
-package com.jwebmp.plugins.jqueryverticaltimeline;
+package com.jwebmp.plugins.jqui.verticaltimeline;
 
 import com.jwebmp.logger.LogFactory;
 import org.junit.jupiter.api.Test;
 
 import java.util.logging.Logger;
 
-public class VerticalTimelineTest
+public class JQUIVerticalTimelineTest
 
 {
 	Logger log = LogFactory.getLog("Test");
@@ -13,7 +13,7 @@ public class VerticalTimelineTest
 	@Test
 	public void testVerticalHtml()
 	{
-		VerticalTimeline vt = new VerticalTimeline();
+		JQUIVerticalTimeline vt = new JQUIVerticalTimeline();
 		log.info(vt.toString(true));
 
 	}

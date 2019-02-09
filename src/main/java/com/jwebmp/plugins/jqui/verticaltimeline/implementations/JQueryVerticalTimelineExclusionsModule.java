@@ -1,4 +1,4 @@
-package com.jwebmp.plugins.jqueryverticaltimeline.implementations;
+package com.jwebmp.plugins.jqui.verticaltimeline.implementations;
 
 import com.jwebmp.guicedinjection.interfaces.IGuiceScanJarExclusions;
 import com.jwebmp.guicedinjection.interfaces.IGuiceScanModuleExclusions;

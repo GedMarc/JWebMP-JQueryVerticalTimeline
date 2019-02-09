@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.jwebmp.plugins.jqueryverticaltimeline;
+package com.jwebmp.plugins.jqui.verticaltimeline;
 
 import com.jwebmp.core.Page;
 import com.jwebmp.core.plugins.PluginInformation;
@@ -40,8 +40,8 @@ import javax.validation.constraints.NotNull;
 		pluginIconUrl = "bower_components/vertical-timeline-jwebswing/example.png",
 		pluginIconImageUrl = "bower_components/vertical-timeline-jwebswing/example.png",
 		pluginLastUpdatedDate = "2017/03/04")
-public class VerticalTimelinePageConfigurator
-		implements IPageConfigurator<VerticalTimelinePageConfigurator>
+public class JQUIVerticalTimelinePageConfigurator
+		implements IPageConfigurator<JQUIVerticalTimelinePageConfigurator>
 {
 	/**
 	 * If this configurator is enabled
@@ -57,7 +57,7 @@ public class VerticalTimelinePageConfigurator
 	 */
 	public static boolean isEnabled()
 	{
-		return VerticalTimelinePageConfigurator.enabled;
+		return JQUIVerticalTimelinePageConfigurator.enabled;
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class VerticalTimelinePageConfigurator
 	 */
 	public static void setEnabled(boolean mustEnable)
 	{
-		VerticalTimelinePageConfigurator.enabled = mustEnable;
+		JQUIVerticalTimelinePageConfigurator.enabled = mustEnable;
 	}
 
 	@NotNull
@@ -78,26 +78,26 @@ public class VerticalTimelinePageConfigurator
 	@SuppressWarnings("unchecked")
 	public Page configure(Page page)
 	{
-		if (!page.isConfigured())
+		if (!page.isConfigured() && enabled())
 		{
 			page.getBody()
 			    .getJavascriptReferences()
-			    .add(com.jwebmp.plugins.jqueryverticaltimeline.VerticalTimelineReferencePool.VerticalTimelineReferenceUnderscore.getJavaScriptReference());
+			    .add(JQUIVerticalTimelineReferencePool.VerticalTimelineReferenceUnderscore.getJavaScriptReference());
 			page.getBody()
 			    .getJavascriptReferences()
-			    .add(com.jwebmp.plugins.jqueryverticaltimeline.VerticalTimelineReferencePool.VerticalTimelineReferenceTableTop.getJavaScriptReference());
+			    .add(JQUIVerticalTimelineReferencePool.VerticalTimelineReferenceTableTop.getJavaScriptReference());
 			page.getBody()
 			    .getJavascriptReferences()
-			    .add(com.jwebmp.plugins.jqueryverticaltimeline.VerticalTimelineReferencePool.VerticalTimelineReferenceIsotope.getJavaScriptReference());
+			    .add(JQUIVerticalTimelineReferencePool.VerticalTimelineReferenceIsotope.getJavaScriptReference());
 			page.getBody()
 			    .getJavascriptReferences()
-			    .add(com.jwebmp.plugins.jqueryverticaltimeline.VerticalTimelineReferencePool.VerticalTimelineReferenceImagesLoaded.getJavaScriptReference());
+			    .add(JQUIVerticalTimelineReferencePool.VerticalTimelineReferenceImagesLoaded.getJavaScriptReference());
 			page.getBody()
 			    .getJavascriptReferences()
-			    .add(com.jwebmp.plugins.jqueryverticaltimeline.VerticalTimelineReferencePool.VerticalTimelineReference.getJavaScriptReference());
+			    .add(JQUIVerticalTimelineReferencePool.VerticalTimelineReference.getJavaScriptReference());
 			page.getBody()
 			    .getCssReferences()
-			    .add(com.jwebmp.plugins.jqueryverticaltimeline.VerticalTimelineReferencePool.VerticalTimelineReference.getCssReference());
+			    .add(JQUIVerticalTimelineReferencePool.VerticalTimelineReference.getCssReference());
 		}
 		return page;
 	}
@@ -105,7 +105,7 @@ public class VerticalTimelinePageConfigurator
 	@Override
 	public boolean enabled()
 	{
-		return VerticalTimelinePageConfigurator.enabled;
+		return JQUIVerticalTimelinePageConfigurator.enabled;
 	}
 
 }
