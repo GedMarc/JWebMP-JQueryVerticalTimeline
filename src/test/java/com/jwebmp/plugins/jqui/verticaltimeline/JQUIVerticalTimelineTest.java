@@ -1,6 +1,6 @@
 package com.jwebmp.plugins.jqui.verticaltimeline;
 
-import com.jwebmp.logger.LogFactory;
+import com.guicedee.logger.LogFactory;
 import org.junit.jupiter.api.Test;
 
 import java.util.logging.Logger;
