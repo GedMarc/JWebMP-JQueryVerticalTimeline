@@ -1,14 +1,20 @@
 var Tabletop = require('../../');
 
-var testURL = 'https://docs.google.com/spreadsheet/pub?hl=en_US&hl=en_US&key=0AmYzu_s7QHsmdDNZUzRlYldnWTZCLXdrMXlYQzVxSFE&output=html';
+var testURL = 'THIS_WONT_WORK';
 
 function onLoad(data, tabletop) {
   console.log(data);
 };
 
+function onError(err) {
+  console.log("Failed");
+};
+
+
 var options = {
   key: testURL,
   callback: onLoad,
+  error: onError,
   simpleSheet: true
 };
 

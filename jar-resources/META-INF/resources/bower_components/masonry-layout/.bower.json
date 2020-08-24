@@ -36,5 +36,15 @@
     "amd",
     "globals",
     "node"
-  ]
+  ],
+  "version": "4.2.2",
+  "_release": "4.2.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v4.2.2",
+    "commit": "35617b033d012dc31298e8d3c50f55323d6811b3"
+  },
+  "_source": "https://github.com/desandro/masonry.git",
+  "_target": "^4.1.0",
+  "_originalSource": "masonry-layout"
 }

@@ -8,24 +8,42 @@ Tabletop.js easily integrates Google Spreadsheets with templating systems and an
 
 ### Like how easy?
 
-**Step One:** make a Google Spreadsheet and "Publish to Web."
+**Step One:** make a Google Spreadsheet and "Publish to Web." It doesn't matter what publishing method you pick.
 
 **Step Two:** Write a page that invokes Tabletop with the published URL Google gives you.
 
-    function init() {
-      Tabletop.init( { key: 'https://docs.google.com/spreadsheets/d/0AmYzu_s7QHsmdDNZUzRlYldnWTZCLXdrMXlYQzVxSFE/pubhtml',
-                       callback: function(data, tabletop) { 
-	                       console.log(data)
-                       },
-                       simpleSheet: true } )
-    }
-    window.addEventListener('DOMContentLoaded', init)
+```js
+function init() {
+  Tabletop.init( { key: 'https://docs.google.com/spreadsheets/d/0AmYzu_s7QHsmdDNZUzRlYldnWTZCLXdrMXlYQzVxSFE/pubhtml',
+                    callback: function(data, tabletop) { 
+                      console.log(data)
+                    },
+                    simpleSheet: true } )
+}
+window.addEventListener('DOMContentLoaded', init)
+```
+
+**Step Two, modern-er version:** We've moved to the future (aka like a decade ago) by supporting promises.
+
+```js
+function init() {
+  Tabletop.init( {
+    key: 'https://docs.google.com/spreadsheets/d/0AmYzu_s7QHsmdDNZUzRlYldnWTZCLXdrMXlYQzVxSFE/pubhtml',
+    simpleSheet: true }
+  ).then(function(data, tabletop) { 
+    console.log(data)
+  })
+}
+window.addEventListener('DOMContentLoaded', init)
+```
 
 **Step Three:** Enjoy your data!
 
-    [ { name: "Carrot", category: "Vegetable", healthiness: "Adequate" }, 
-      { name: "Pork Shoulder", category: "Meat", healthiness: "Questionable" }, 
-      { name: "Bubblegum", category: "Candy", healthiness: "Super High"} ]
+```js
+[ { name: "Carrot", category: "Vegetable", healthiness: "Adequate" }, 
+  { name: "Pork Shoulder", category: "Meat", healthiness: "Questionable" }, 
+  { name: "Bubblegum", category: "Candy", healthiness: "Super High"} ]
+```
 
 Yes, it's that easy.
 
@@ -44,11 +62,19 @@ Make a [Google Spreadsheet](http://drive.google.com). Give it some column header
     Pork Shoulder   Meat       Questionable
     Bubblegum       Candy      Super High
   
-Now go up to the `File` menu and pick `Publish to the web`. Fiddle with the options, then click `Start publishing`. A URL will appear, something like `https://docs.google.com/spreadsheets/d/1sbyMINQHPsJctjAtMW0lCfLrcpMqoGMOJj6AN-sNQrc/pubhtml` (although it might look different if you're using an especially old or new Sheet).
+Now go up to the `File` menu and pick `Publish to the web`. Fiddle with the options, then click `Start publishing`. A URL will appear, something like `https://docs.google.com/spreadsheets/d/e/2PACX-1vQ2qq5UByYNkhsujdrWlDXtpSUhh7ovl0Ak6pyY3sWZqEaWS2lJ0iuqcag8iDLsoTuZ4XTiaEBtbbi0/pubhtml` .
 
-Copy that! In theory you're interested in the `1sbyMINQHPsJctjAtMW0lCfLrcpMqoGMOJj6AN-sNQrc` but you can use the whole thing if you want.
+**IGNORE THIS URL!** You used to be able to use it, you can't anymore (you still need to do this step, though).
 
-If your URL has a `/d/e` in it [read this part](#if-your-publish-to-web-url-doesnt-work).
+Now that you've published your sheet, you now need to share it, too.
+
+1. Click the **Share** link in the upper right-hand corner
+2. Click the very pale **Advanced** button
+3. **Change...** access to "On - Anyone with a link"
+4. Make sure **Access: Anyone** says **Can view**, since you don't want strangers editing your data
+5. Click **Save**
+
+Copy the **Link to Share**. Your URL should look something like `https://docs.google.com/spreadsheets/d/1Io6W5XitNvifEXER9ECTsbHhAjXsQLq6VEz7kSPDPiQ/edit?usp=sharing`. It should **not** have a `/d/e` in it.
 
 ### 2) Setting up Tabletop
 
@@ -82,13 +108,34 @@ Check out the reference and the examples, but basically you're set. The only thi
 
 You might also be interested in the publishing/republishing/publish-as-it-changes aspects of Google Spreadsheets, but you'll need to google that for any specifics.
 
-### If your Publish to Web URL doesn't work
+## A note on node
+To use this in a node environment:
 
-For an unknown reason the **Publish to Web** URL sometimes doesn't work, especially if it has a `/d/e` in it. If yours has a `/d/e`, try refreshing the page to see if it goes away. If it doesn't the following steps will work:
+```
+npm install tabletop -save
+```
 
-1. Click the **Share** link in the upper right-hand corner
-2. **Change...** access to "On - Anyone with a link"
-3. Use the URL from that window
+Copy and paste this in your `index.js` file:
+
+```js
+ const Tabletop = require('tabletop');
+
+ var publicSpreadsheetUrl = 'URL OF SPREADSHEET AS YOU FIND IN THE BROWSER ADDRESS BAR';
+
+function init() {
+    Tabletop.init( { key: publicSpreadsheetUrl,
+                     callback: showInfo,
+                     simpleSheet: false } )
+  }
+
+ function showInfo(data, tabletop) {
+  // do something with the data
+  console.log(JSON.stringify(data, null, 2));
+}
+
+//initialise and kickstart the whole thing.
+init()
+```
 
 # Reference
 
@@ -100,10 +147,12 @@ The simplest Tabletop initialization works like this:
       key: '1sbyMINQHPsJctjAtMW0lCfLrcpMqoGMOJj6AN-sNQrc', 
       callback: showInfo 
     })
-  
+
 You pass in either `key` as the actual spreadsheet key, or just the full published-spreadsheet URL.
 
 `showInfo` is a function elsewhere in your code that gets called with your data.
+
+**Depending on how recently you've published your spreadsheet, your `key` comes from different places.** Either the spreadsheet's URL in the address bar, the Publish URL, or the Share URL. [Read this](https://github.com/jsoma/tabletop#if-your-publish-to-web-url-doesnt-work)
 
 ## Tabletop initialization options
 
@@ -122,6 +171,10 @@ You pass in either `key` as the actual spreadsheet key, or just the full publish
 #### parseNumbers
 
 `parseNumbers` can be true or false (default false). If true, Tabletop will automatically parse any numbers for you so they don't run around as strings.
+
+#### error
+
+`error` is the callback for when something goes wrong. I'm uncertain how well it works in the browser in all situations, but in our Modern World I'm pretty sure it can be relied on.
 
 #### orderby
 
@@ -306,6 +359,10 @@ You can point `proxy` at anything you'd like as long as it has `KEY` and `KEY-SH
 **Empty tables are trouble.** We can't get column names from them (c'mon, Google!), so don't be too confused when a table with 0 rows is coming back with an empty `.column_names` or your code starts throwing weird errors when processing the results.
 
 **Empty rows are trouble.** If you have a row that's completely empty, Google doesn't return any rows after the empty row. As a result, you need to make sure every line in your spreadsheet has data in it.
+
+**Weird-named columns are trouble.** A [column named %](https://github.com/jsoma/tabletop/issues/124) might cause your spreadsheet to stop processing.
+
+**Unnamed columns are trouble.** A [column without a name](https://github.com/jsoma/tabletop/issues/114) will get in the way of your data successfully coming through.
 
 ## If you are having trouble
 

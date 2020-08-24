@@ -2,15 +2,18 @@
 <html>
   <body>
 
-    <p id="data"></p>
+    <p id="food"></p>
 
     <script type="text/javascript" src="../../src/tabletop.js"></script>
     <script type="text/javascript">
-      var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1sbyMINQHPsJctjAtMW0lCfLrcpMqoGMOJj6AN-sNQrc/pubhtml';
+      var public_spreadsheet_url = 'THIS_WONT_WORK';
 
       function init() {
         Tabletop.init( { key: public_spreadsheet_url,
                          callback: showInfo,
+                         error: function() {
+                          document.getElementById("food").innerHTML = "There was an error!! That's what we expected, so it's ok.")
+                         },
                          simpleSheet: true } );
       }
 
@@ -18,7 +21,8 @@
 
       function showInfo(data) {
         // data comes through as a simple array since simpleSheet is turned on
-        document.getElementById("data").innerHTML = JSON.stringify(data);
+        alert("Successfully processed " + data.length + " rows!")
+        document.getElementById("food").innerHTML = "<strong>Foods:</strong> " + [ data[0].Name, data[1].Name, data[2].Name ].join(", ");
         console.log(data);
       }
 
