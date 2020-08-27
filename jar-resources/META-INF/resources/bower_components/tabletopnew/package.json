@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "lodash": "^4.17.12"
+    "lodash": "^4.17.17"
   },
   "engines": {
     "node": ">=0.10.0"
