@@ -29,7 +29,7 @@
     "uglifyjs": "^2.4.10"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.20.0",
     "lodash": "^4.17.17"
   },
   "engines": {
