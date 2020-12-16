@@ -18,6 +18,7 @@ package com.jwebmp.plugins.jqui.verticaltimeline;
 
 import com.jwebmp.core.Page;
 import com.jwebmp.core.plugins.PluginInformation;
+import com.jwebmp.core.plugins.PluginStatus;
 import com.jwebmp.core.services.IPageConfigurator;
 
 import jakarta.validation.constraints.NotNull;
@@ -36,10 +37,15 @@ import jakarta.validation.constraints.NotNull;
 		pluginSourceUrl = "https://github.com/GedMarc/JWebMP-VerticalTimelineGemPlugin",
 		pluginWikiUrl = "https://github.com/GedMarc/JWebMP-VerticalTimelineGemPluginwiki",
 		pluginOriginalHomepage = "https://codyhouse.co/gem/vertical-timeline/",
-		pluginDownloadUrl = "https://sourceforge.net/projects/jwebswing/files/plugins/VerticalTimelineGemPlugin.jar/download",
-		pluginIconUrl = "bower_components/vertical-timeline-jwebswing/example.png",
-		pluginIconImageUrl = "bower_components/vertical-timeline-jwebswing/example.png",
-		pluginLastUpdatedDate = "2017/03/04")
+		pluginDownloadUrl = "https://mvnrepository.com/artifact/com.jwebmp.plugins.jquery/jwebmp-jqui-vertical-timeline",
+		pluginIconUrl = "",
+		pluginIconImageUrl = "",
+		pluginLastUpdatedDate = "2017/03/04",
+		pluginGroupId = "com.jwebmp.plugins.jquery",
+		pluginArtifactId = "jwebmp-jqui-vertical-timeline",
+		pluginModuleName = "com.jwebmp.plugins.jqueryverticaltimeline",
+		pluginStatus = PluginStatus.Released
+)
 public class JQUIVerticalTimelinePageConfigurator
 		implements IPageConfigurator<JQUIVerticalTimelinePageConfigurator>
 {

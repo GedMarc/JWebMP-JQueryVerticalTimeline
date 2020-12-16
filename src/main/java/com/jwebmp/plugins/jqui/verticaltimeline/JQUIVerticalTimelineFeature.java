@@ -80,6 +80,6 @@ public class JQUIVerticalTimelineFeature
 	@Override
 	public void assignFunctionsToComponent()
 	{
-		addQuery(getComponent().getJQueryID() + "verticalTimeline(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
+		addQuery(getComponent().asBase().getJQueryID() + "verticalTimeline(" + getOptions() + STRING_CLOSING_BRACKET_SEMICOLON + getNewLine());
 	}
 }

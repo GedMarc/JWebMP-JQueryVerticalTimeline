@@ -27,7 +27,7 @@ import java.util.List;
  * @since 07 Aug 2017
  */
 public class JQUIVerticalTimelineParentOptions
-		extends JavaScriptPart
+		extends JavaScriptPart<JQUIVerticalTimelineParentOptions>
 {
 
 

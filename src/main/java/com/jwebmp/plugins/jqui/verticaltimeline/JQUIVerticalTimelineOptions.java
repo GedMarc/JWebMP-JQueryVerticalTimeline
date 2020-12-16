@@ -34,10 +34,10 @@ import java.util.Date;
  * @since Mar 4, 2015
  */
 public class JQUIVerticalTimelineOptions
-		extends JavaScriptPart
+		extends JavaScriptPart<JQUIVerticalTimelineOptions>
 {
 	@JsonIgnore
-	private final SimpleDateFormat sdfDateFormat = new SimpleDateFormat("dd MMM YYYY");
+	private final SimpleDateFormat sdfDateFormat = new SimpleDateFormat("dd MMM yyyy");
 	@JsonIgnore
 	private final SimpleDateFormat customDateFormat = new SimpleDateFormat("MMM dd");
 	private String title;
