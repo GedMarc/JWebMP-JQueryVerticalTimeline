@@ -5,7 +5,7 @@ module com.jwebmp.plugins.jqueryverticaltimeline {
 	exports com.jwebmp.plugins.jqui.verticaltimeline;
 
 	requires com.jwebmp.core;
-	requires com.guicedee.logmaster;
+	
 
 	requires jakarta.validation;
 	requires java.logging;
